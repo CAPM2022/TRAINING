@@ -1,6 +1,6 @@
 # auto generated wildcard
 db/.env
-/gen
+gen
 
 # added by cds deploy
 default-env.json
