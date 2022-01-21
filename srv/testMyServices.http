@@ -1,0 +1,19 @@
+GET http://localhost:4004/CatalogService/ProductOrders
+
+GET http://localhost:4004/CatalogService/POWorklist    
+    
+    http://localhost:4004/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
