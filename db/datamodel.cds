@@ -1,11 +1,11 @@
-namespace epm.db;
+//namespace epm.db;
 
 using { cuid, managed, temporal, Currency } from '@sap/cds/common';
 using { epm.common } from './common';
 
 type Guid : String(32);
 
-
+context epm.db {
 context master {
     entity businesspartner {
         key NODE_KEY : Guid;
@@ -192,4 +192,25 @@ context CDSViews {
             round(sum(PO_ORDERS.GrossAmount),2) as ![POGrossAmount]: Decimal(10, 2)
         }
         group by ProductId,Country,PO_ORDERS.CurrencyCode         
+}
+}
+@cds.persistence.calcview
+@cds.persistence.exists 
+Entity ![ZCV_MY_FIRSTCALC_VIEW] {
+key     ![NODE_KEY]: String(32)  @title: 'NODE_KEY: NODE_KEY' ; 
+key     ![PRODUCT_ID]: String(28)  @title: 'PRODUCT_ID: PRODUCT_ID' ; 
+key     ![TYPE_CODE]: String(2)  @title: 'TYPE_CODE: TYPE_CODE' ; 
+key     ![CATEGORY]: String(32)  @title: 'CATEGORY: CATEGORY' ; 
+key     ![DESCRIPTION]: String(255)  @title: 'DESCRIPTION: DESCRIPTION' ; 
+key     ![SUPPLIER_GUID_NODE_KEY]: String(32)  @title: 'SUPPLIER_GUID_NODE_KEY: SUPPLIER_GUID_NODE_KEY' ; 
+key     ![TAX_TARIF_CODE]: Integer  @title: 'TAX_TARIF_CODE: TAX_TARIF_CODE' ; 
+key     ![MEASURE_UNIT]: String(2)  @title: 'MEASURE_UNIT: MEASURE_UNIT' ; 
+key     ![WEIGHT_MEASURE]: Decimal(34)  @title: 'WEIGHT_MEASURE: WEIGHT_MEASURE' ; 
+key     ![WEIGHT_UNIT]: String(2)  @title: 'WEIGHT_UNIT: WEIGHT_UNIT' ; 
+key     ![CURRENCY_CODE]: String(4)  @title: 'CURRENCY_CODE: CURRENCY_CODE' ; 
+key     ![PRICE]: Decimal(15, 2)  @title: 'PRICE: PRICE' ; 
+key     ![WIDTH]: Decimal(34)  @title: 'WIDTH: WIDTH' ; 
+key     ![DEPTH]: Decimal(34)  @title: 'DEPTH: DEPTH' ; 
+key     ![HEIGHT]: Decimal(34)  @title: 'HEIGHT: HEIGHT' ; 
+key     ![DIM_UNIT]: String(2)  @title: 'DIM_UNIT: DIM_UNIT' ; 
 }

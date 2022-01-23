@@ -117,7 +117,7 @@
         "NODE_KEY": {
           "@title": "{i18n>ap_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "CITY": {
@@ -203,7 +203,7 @@
         "NODE_KEY": {
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "PRODUCT_ID": {
@@ -353,7 +353,7 @@
         "NODE_KEY": {
           "@title": "{i18n>bp_key}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "BP_ROLE": {
@@ -804,6 +804,115 @@
         }
       }
     },
+    "CatalogService.ProdCV": {
+      "kind": "entity",
+      "@readonly": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "ZCV_MY_FIRSTCALC_VIEW"
+          ]
+        }
+      },
+      "elements": {
+        "NODE_KEY": {
+          "@title": "NODE_KEY: NODE_KEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "PRODUCT_ID": {
+          "@title": "PRODUCT_ID: PRODUCT_ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 28
+        },
+        "TYPE_CODE": {
+          "@title": "TYPE_CODE: TYPE_CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "CATEGORY": {
+          "@title": "CATEGORY: CATEGORY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "DESCRIPTION": {
+          "@title": "DESCRIPTION: DESCRIPTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "SUPPLIER_GUID_NODE_KEY": {
+          "@title": "SUPPLIER_GUID_NODE_KEY: SUPPLIER_GUID_NODE_KEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "TAX_TARIF_CODE": {
+          "@title": "TAX_TARIF_CODE: TAX_TARIF_CODE",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "MEASURE_UNIT": {
+          "@title": "MEASURE_UNIT: MEASURE_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "WEIGHT_MEASURE": {
+          "@title": "WEIGHT_MEASURE: WEIGHT_MEASURE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "WEIGHT_UNIT": {
+          "@title": "WEIGHT_UNIT: WEIGHT_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "CURRENCY_CODE": {
+          "@title": "CURRENCY_CODE: CURRENCY_CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "PRICE": {
+          "@title": "PRICE: PRICE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "WIDTH": {
+          "@title": "WIDTH: WIDTH",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "DEPTH": {
+          "@title": "DEPTH: DEPTH",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "HEIGHT": {
+          "@title": "HEIGHT: HEIGHT",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "DIM_UNIT": {
+          "@title": "DIM_UNIT: DIM_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
     "mysrv": {
       "@source": "myFirstService.cds",
       "kind": "service"
@@ -819,10 +928,13 @@
         "type": "cds.String"
       }
     },
-    "epm.db.Guid": {
+    "Guid": {
       "kind": "type",
       "type": "cds.String",
       "length": 32
+    },
+    "epm.db": {
+      "kind": "context"
     },
     "epm.db.master": {
       "kind": "context"
@@ -833,7 +945,7 @@
         "NODE_KEY": {
           "@title": "{i18n>bp_key}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "BP_ROLE": {
@@ -891,7 +1003,7 @@
         "NODE_KEY": {
           "@title": "{i18n>ap_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "CITY": {
@@ -970,7 +1082,7 @@
         "NODE_KEY": {
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "PRODUCT_ID": {
@@ -1741,12 +1853,12 @@
       "elements": {
         "Partner": {
           "@title": "{i18n>bp_key}",
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "ProductId": {
           "@title": "{i18n>Prod_key1}",
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "CurrencyCode": {
@@ -1994,7 +2106,7 @@
         "ProductId": {
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "DESCRIPTION": {
@@ -2140,7 +2252,7 @@
         "ProductId": {
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "Country": {
@@ -2161,6 +2273,109 @@
           "type": "cds.Decimal",
           "precision": 10,
           "scale": 2
+        }
+      }
+    },
+    "ZCV_MY_FIRSTCALC_VIEW": {
+      "kind": "entity",
+      "@cds.persistence.calcview": true,
+      "@cds.persistence.exists": true,
+      "elements": {
+        "NODE_KEY": {
+          "@title": "NODE_KEY: NODE_KEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "PRODUCT_ID": {
+          "@title": "PRODUCT_ID: PRODUCT_ID",
+          "key": true,
+          "type": "cds.String",
+          "length": 28
+        },
+        "TYPE_CODE": {
+          "@title": "TYPE_CODE: TYPE_CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "CATEGORY": {
+          "@title": "CATEGORY: CATEGORY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "DESCRIPTION": {
+          "@title": "DESCRIPTION: DESCRIPTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 255
+        },
+        "SUPPLIER_GUID_NODE_KEY": {
+          "@title": "SUPPLIER_GUID_NODE_KEY: SUPPLIER_GUID_NODE_KEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 32
+        },
+        "TAX_TARIF_CODE": {
+          "@title": "TAX_TARIF_CODE: TAX_TARIF_CODE",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "MEASURE_UNIT": {
+          "@title": "MEASURE_UNIT: MEASURE_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "WEIGHT_MEASURE": {
+          "@title": "WEIGHT_MEASURE: WEIGHT_MEASURE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "WEIGHT_UNIT": {
+          "@title": "WEIGHT_UNIT: WEIGHT_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "CURRENCY_CODE": {
+          "@title": "CURRENCY_CODE: CURRENCY_CODE",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "PRICE": {
+          "@title": "PRICE: PRICE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 2
+        },
+        "WIDTH": {
+          "@title": "WIDTH: WIDTH",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "DEPTH": {
+          "@title": "DEPTH: DEPTH",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "HEIGHT": {
+          "@title": "HEIGHT: HEIGHT",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 34
+        },
+        "DIM_UNIT": {
+          "@title": "DIM_UNIT: DIM_UNIT",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
         }
       }
     },
@@ -2714,7 +2929,7 @@
           "@odata.containment.ignore": true,
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "DESCRIPTION": {
@@ -2947,7 +3162,7 @@
           "@odata.containment.ignore": true,
           "@title": "{i18n>Prod_key1}",
           "key": true,
-          "type": "epm.db.Guid",
+          "type": "Guid",
           "length": 32
         },
         "DESCRIPTION": {

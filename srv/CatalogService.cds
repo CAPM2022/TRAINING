@@ -1,4 +1,4 @@
-using { epm.db, epm.db.CDSViews } from  '../db/datamodel';
+using { epm.db, epm.db.CDSViews, ZCV_MY_FIRSTCALC_VIEW } from  '../db/datamodel';
 
 
 service CatalogService@(path:'/CatalogService') {
@@ -31,4 +31,7 @@ service CatalogService@(path:'/CatalogService') {
         ProductId
     };
 
+    // Calculation View as service
+    @readonly
+    entity ProdCV as projection on ZCV_MY_FIRSTCALC_VIEW;
 }
