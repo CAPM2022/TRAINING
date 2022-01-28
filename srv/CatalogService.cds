@@ -1,9 +1,16 @@
 using { epm.db, epm.db.CDSViews, ZCV_MY_FIRSTCALC_VIEW } from  '../db/datamodel';
 
 
-service CatalogService@(path:'/CatalogService') {
-
-    entity EmployeeSet as projection on db.master.employees;
+service CatalogService@(path:'/CatalogService') 
+                @(requires: 'authenticated-user')  
+                {
+    @Capabilities : { Insertable, Updatable , Deletable }
+     entity EmployeeSet 
+    @(restrict: [ 
+    { grant: ['READ'], to: 'Viewer',
+      where: 'bankName = $user.BankName' },
+    ])
+     as projection on db.master.employees;
 
     entity AddressSet as projection on db.master.address;
 

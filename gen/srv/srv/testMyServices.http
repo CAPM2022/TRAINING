@@ -1,0 +1,45 @@
+GET http://localhost:4004/CatalogService/ProductOrders
+
+###PO work list
+http://localhost:4004/CatalogService/POWorklist    
+
+###Create new Employee
+POST http://localhost:4004/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{ 
+            "nameFirst": "Anubhav",
+            "nameMiddle": null,
+            "nameLast": "Oberoy",
+            "nameInitials": null,
+            "sex": "M",
+            "language": "E",
+            "phoneNumber": "+91 8448454549",
+            "email": "anubhav.abap@gmail.com",
+            "loginName": "ANUBHAVO",
+            "accountNumber": "111222333",
+            "bankName": "HDFC bank"
+}
+
+###Update the salary for the employee
+PATCH http://localhost:4004/CatalogService/EmployeeSet/aa34c5b2-8dfe-4bac-ac40-fecb59af61c9
+Content-Type: application/json;IEEE754Compatible=true
+
+{ 
+            "salaryAmount": "1000000.99",
+            "Currency_code": "INR"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
