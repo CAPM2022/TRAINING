@@ -6,5 +6,5 @@ default-env.json
 
 # auto generated wildcard
 myFirstCAPM/db/.env
-node_modules
-gen
+
+
