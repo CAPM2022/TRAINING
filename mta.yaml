@@ -51,6 +51,12 @@ resources:
       service: xsuaa
       service-plan: application
       path: ./xs-security.json
+  - name: cross-container-service
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: MY_SFLIGHT_SRV
+    properties:
+      the-service-name: '${service-name}'
 parameters:
   enable-parallel-deployments: true
 build-parameters:

@@ -4,5 +4,6 @@
     "**/.git": true,
     "**/.vscode": true
 },
-"git.ignoreLimitWarning": true
+"git.ignoreLimitWarning": true,
+"SAP HANA Database Artifacts.lastSelectedTargetPath": "/home/user/projects/myFirstCAPM/db/src/defaults"
 }
